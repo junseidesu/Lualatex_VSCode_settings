@@ -1,0 +1,102 @@
+\documentclass[paper=a4, fontsize=10pt]{jlreq}
+%余白を減らす
+\usepackage[margin=25mm]{geometry}
+\usepackage{physics}
+\usepackage{amsmath}
+\usepackage{bm}
+%section前後の余白を調整
+\ModifyHeading{section}{lines=1.5, before_lines=0.5}
+\ModifyHeading{subsection}{lines=1, before_lines=0.5}
+\ModifyHeading{subsubsection}{lines=0.8, before_lines=0.2}
+
+\begin{document}
+%タイトル
+\begin{center}
+    {\LARGE 理論化学B4ゼミ\\○月○日発表資料}\\
+    {\large 範囲：○○-○○}\\
+    {\large 発表者：理論 太郎}\\
+\end{center}
+\hspace{10pt}
+\hrule
+\hspace{10pt}
+\section{セクション}
+これはセクションの中の文章です。
+\subsection{サブセクション}
+これはサブセクションの中の文章です。
+\subsubsection{サブサブセクション}
+これはサブサブセクションの中の文章です。
+
+\setcounter{section}{2}
+\section{カウンターをいじればセクション番号をいじれる}
+このように書くとセクションの番号を途中から開始することができます。教科書の番号に合わせたければ\\
+\verb|\setcounter{section}{数字}|\\
+を使うと便利です。
+
+\section{数式環境}
+\subsection{equation環境}
+Latex(amsmath)の数式環境はたくさんありますが、ここでは代表的なものを紹介します。
+\begin{equation}
+    \sum_{i}\ket{i}\bra{i} = \bm{1}
+\end{equation}
+equation環境は一行の数式を書く際に使えます。以降紹介する数式環境にも通じますが、環境の名前のあとに*をつけると数式番号を消すことができます。
+\begin{equation*}
+    \sum_{i}\ket{i}\bra{i} = \bm{1}
+\end{equation*}
+また、数式の後に\verb|\tag{数式番号}|と書くと任意の数式番号を付けられます。
+\begin{equation}
+    \sum_{i}\ket{i}\bra{i} = \bm{1} \tag{1.1.1.1.1.1}
+\end{equation}
+\subsection{align環境}
+align環境は複数行の数式を書く際に使えます。
+\begin{align}
+    \ket{\psi} &= \sum_{i} c_i \ket{i} \\
+    \bra{\psi} &= \sum_{i} c_i^* \bra{i}
+\end{align}
+align環境では、\&を使って数式を揃えることができます。上の例では、等号を揃えています。
+\subsection{gather環境}
+gather環境は各行の数式を中央揃えで書くことができます。
+\begin{gather}
+    \ket{\psi} = \sum_{i} c_i \ket{i} \\
+    \bra{\psi} = \sum_{i} c_i^* \bra{i}
+\end{gather}
+この例ではalign環境と違いが分かりにくいですね。
+\section{基本的な数式記法}
+調べたらもっと詳しいことがいくらでも出で来るので、ここでは本当に基本的なものをいくつか紹介します。
+\subsection{分数}
+\begin{equation*}
+    \frac{a}{b}
+\end{equation*}
+\verb|\frac{分子}{分母}|で書けます。
+\subsection{演算子}
+\begin{gather*}
+    \sum_{i} a_i \\
+    \prod_{i} a_i \\
+    \int_{a}^{b} f(x) dx
+\end{gather*}
+シグマのindexや積分区間は\verb|\command_{下付き文字}^{上付き文字}|で書けます。
+\subsection{ベクトル}
+\begin{equation*}
+    \vec{a}
+\end{equation*}
+\verb|\vec{文字}|でベクトルを書けます。もしくは
+\begin{equation*}
+    \bm{a}
+\end{equation*}
+\verb|\bm{文字}|で太字にすることもできます。行列の記号なども同様です。
+\subsection{行列}
+\begin{equation*}
+    \begin{pmatrix}
+        a & b \\
+        c & d
+    \end{pmatrix}
+\end{equation*}
+\verb|\begin{pmatrix} ... \end{pmatrix}|で行列を書けます。行列の要素は\verb|&|で区切り、行の区切りは\verb|\\|で書きます。
+\subsection{ブラケット記法}
+\begin{equation*}
+    \ket{\psi}, \bra{\psi}, \braket{\phi|\psi}
+\end{equation*}
+
+\verb|\ket{文字}|でket、\verb|\bra{文字}|でbra、\verb|\braket{bra||\verb|ket}|でブラケット記法が書けます。
+\section{その他}
+Latexコードや環境構築などについてわからないことがあれば、なにかお手伝いできることがあるかもしれないので気軽に聞いてください。おすすめのパッケージなどあれば教えてください。
+\end{document}
